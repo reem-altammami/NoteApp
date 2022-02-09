@@ -39,7 +39,7 @@ val state: State<NotesState> = _state
                 }
 getNotes(event.noteOrder)
             }
-                is NotesEvent.DeleteNot->{
+                is NotesEvent.DeleteNote->{
                     viewModelScope.launch {
                         noteUseCases.deleteNoteUseCase(event.note)
                         recentlyDeletedNote = event.note
