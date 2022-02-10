@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.reem.noteapp.feature_note.domain.model.InvalidNoteException
 import com.reem.noteapp.feature_note.domain.model.Note
-import com.reem.noteapp.feature_note.domain.use_case.AddNoteUseCase
 import com.reem.noteapp.feature_note.domain.use_case.NoteUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -86,7 +85,7 @@ viewModelScope.launch {
                             noteContent.value.text.isBlank()
                 )
             }
-            is AddEditNoteEvent.ChangColor -> {
+            is AddEditNoteEvent.ChangeColor -> {
                 _noteColor.value = event.color
             }
             is AddEditNoteEvent.SaveNote ->{
